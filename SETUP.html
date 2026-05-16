@@ -1,0 +1,164 @@
+<!-- DOCTYPE html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Setup Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 { color: #2c3e50; }
+        h2 { color: #e74c3c; }
+        code { 
+            background-color: #f4f4f4; 
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .step {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #e74c3c;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎥 OlajideProduction - Quick Setup Guide</h1>
+
+    <div class="highlight">
+        <strong>⚡ Quick Start (5 minutes):</strong>
+        <ol>
+            <li>Replace images in <code>assets/images/</code> with your photos</li>
+            <li>Update your info (email, phone, address) in all HTML files</li>
+            <li>Open <code>index.html</code> in your browser</li>
+            <li>Deploy to GitHub Pages or Netlify (see below)</li>
+        </ol>
+    </div>
+
+    <h2>Step 1: Add Your Images</h2>
+    <div class="step">
+        <p>Replace placeholder images in <code>assets/images/</code>:</p>
+        <ul>
+            <li><strong>Portfolio images:</strong> 8 images (500x500px) - <code>portfolio-1.jpg</code> to <code>portfolio-8.jpg</code></li>
+            <li><strong>Blog images:</strong> 6 images (600x400px) - <code>blog-1.jpg</code> to <code>blog-6.jpg</code></li>
+            <li><strong>Shop images:</strong> 9 images (400x400px) - <code>product-1.jpg</code> to <code>product-9.jpg</code></li>
+            <li><strong>About image:</strong> 1 image (500x600px) - <code>about-1.jpg</code></li>
+        </ul>
+        <p><strong>Tip:</strong> Compress images with <a href="https://tinypng.com">TinyPNG.com</a> for faster loading.</p>
+    </div>
+
+    <h2>Step 2: Update Your Information</h2>
+    <div class="step">
+        <p>Open each HTML file and replace:</p>
+        <ul>
+            <li><code>OlajideProduction</code> → Your photography business name</li>
+            <li><code>jayphey66@gmail.com</code> → Your email address</li>
+            <li><code>09169777590</code> → Your phone number</li>
+            <li><code>16 Unity Close<br>Hill Valley, Abule Oko Agbado<br>Ogun State(Lagos State)</code> → Your address</li>
+            <li>Update social media links (Instagram, Facebook, etc.)</li>
+            <li>Update testimonials and about text with real client reviews</li>
+        </ul>
+    </div>
+
+    <h2>Step 3: Customize Colors (Optional)</h2>
+    <div class="step">
+        <p>Edit <code>assets/css/style.css</code> and change the color variables:</p>
+        <code>--primary-color: #2c3e50;</code> (Main color)<br>
+        <code>--accent-color: #e74c3c;</code> (Highlight color)<br>
+        <p><strong>Color Ideas:</strong></p>
+        <ul>
+            <li><strong>Professional:</strong> Primary: #2c3e50, Accent: #e74c3c</li>
+            <li><strong>Warm:</strong> Primary: #34495e, Accent: #f39c12</li>
+            <li><strong>Modern:</strong> Primary: #1a1a1a, Accent: #00d4ff</li>
+            <li><strong>Nature:</strong> Primary: #27ae60, Accent: #2ecc71</li>
+        </ul>
+    </div>
+
+    <h2>Step 4: Set Up Contact Form</h2>
+    <div class="step">
+        <p>The contact form needs a backend to send emails. Choose one:</p>
+        
+        <h3>Option A: Formspree (Easiest)</h3>
+        <ol>
+            <li>Visit <a href="https://formspree.io/">formspree.io</a></li>
+            <li>Create a new form with your email</li>
+            <li>In <code>contact.html</code>, add to the form tag:
+                <br><code>action="https://formspree.io/f/YOUR_FORM_ID" method="POST"</code></li>
+        </ol>
+
+        <h3>Option B: EmailJS (No Backend Needed)</h3>
+        <ol>
+            <li>Visit <a href="https://www.emailjs.com/">emailjs.com</a></li>
+            <li>Set up service and template</li>
+            <li>Add script and update JavaScript in <code>assets/js/script.js</code></li>
+        </ol>
+
+        <h3>Option C: Your Own Server</h3>
+        <p>Create a backend endpoint and update the fetch call in <code>assets/js/script.js</code></p>
+    </div>
+
+    <h2>Step 5: Deploy Online</h2>
+    <div class="step">
+        <h3>Option A: GitHub Pages (Free)</h3>
+        <ol>
+            <li>Create repository: <code>yourusername.github.io</code></li>
+            <li>Upload all files</li>
+            <li>Your site goes live at <code>https://yourusername.github.io</code></li>
+        </ol>
+
+        <h3>Option B: Netlify (Free, Recommended)</h3>
+        <ol>
+            <li>Visit <a href="https://netlify.com">netlify.com</a></li>
+            <li>Drag & drop your folder → Done!</li>
+            <li>Get free domain or connect your own</li>
+        </ol>
+
+        <h3>Option C: Paid Hosting</h3>
+        <p>Bluehost, GoDaddy, Hostinger, etc. - Upload via FTP</p>
+    </div>
+
+    <h2>Step 6: SEO Optimization (Important!)</h2>
+    <div class="step">
+        <p>Update meta tags in <code>&lt;head&gt;</code> of each page:</p>
+        <code>&lt;meta name="description" content="Your description here"&gt;</code><br>
+        <code>&lt;title&gt;Your Business - Professional Photography&lt;/title&gt;</code><br>
+        <p><strong>Example:</strong></p>
+        <code>&lt;title&gt;John Smith Photography - Professional Product & Commercial Photos&lt;/title&gt;</code>
+    </div>
+
+    <h2>Useful Resources</h2>
+    <ul>
+        <li><strong>Images:</strong> <a href="https://unsplash.com/">Unsplash</a>, <a href="https://pexels.com/">Pexels</a></li>
+        <li><strong>Icons:</strong> <a href="https://fontawesome.com/">FontAwesome</a></li>
+        <li><strong>Colors:</strong> <a href="https://coolors.co/">Coolors.co</a></li>
+        <li><strong>Fonts:</strong> <a href="https://fonts.google.com/">Google Fonts</a></li>
+        <li><strong>Compress Images:</strong> <a href="https://tinypng.com/">TinyPNG</a></li>
+        <li><strong>Check Performance:</strong> <a href="https://pagespeed.web.dev/">PageSpeed Insights</a></li>
+    </ul>
+
+    <h2>Need Help?</h2>
+    <ul>
+        <li><strong>Check the README.md</strong> for detailed documentation</li>
+        <li><strong>View inspect element</strong> (Right-click → Inspect) to see code</li>
+        <li><strong>Google search:</strong> Most HTML/CSS/JS questions have answers online</li>
+    </ul>
+
+    <div class="highlight">
+        <strong>🎉 That's it! You now have a professional photography website.</strong><br>
+        Next: Replace images, update text, and deploy online!
+    </div>
+</body>
+</html>
