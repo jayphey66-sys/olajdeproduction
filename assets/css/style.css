@@ -9,14 +9,16 @@
 }
 
 :root {
-    --primary-color: #2c3e50;
-    --accent-color: #e74c3c;
-    --text-color: #333;
-    --light-bg: #f8f9fa;
+    --primary-color: #1a1a2e;
+    --accent-color: #ff6b35;
+    --text-color: #2d3436;
+    --light-bg: #f7f9fc;
     --white: #ffffff;
-    --border-color: #e0e0e0;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --border-color: #e8eaed;
+    --secondary-color: #00d4ff;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 html {
@@ -26,8 +28,9 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.7;
     background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -46,6 +49,8 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 .nav-container {
@@ -109,7 +114,7 @@ body {
 
 .hero {
     height: 600px;
-    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://via.placeholder.com/1920x600') center/cover;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(255, 107, 53, 0.3) 100%), url('https://source.unsplash.com/featured/1920x1080/?nigeria,photoshoot') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -137,20 +142,22 @@ body {
 
 .cta-button {
     display: inline-block;
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color) 0%, #ff8c5a 100%);
     color: var(--white);
-    padding: 15px 40px;
+    padding: 16px 45px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-weight: 600;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 .cta-button:hover {
-    background-color: #c0392b;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ff5828 0%, #ffb347 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
 }
 
 /* ============================================
@@ -186,7 +193,7 @@ body {
 .gallery-item {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 12px;
     aspect-ratio: 1;
     box-shadow: var(--shadow);
     cursor: pointer;
@@ -242,23 +249,26 @@ body {
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 13px 35px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .btn-primary {
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color) 0%, #ff8c5a 100%);
     color: var(--white);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #c0392b;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ff5828 0%, #ffb347 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
 }
 
 .form-group {
@@ -269,11 +279,12 @@ body {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 12px;
+    padding: 13px 16px;
     border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-radius: 8px;
     font-family: inherit;
     font-size: 14px;
+    transition: all 0.3s;
 }
 
 .form-group input:focus,
@@ -281,7 +292,7 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
 /* ============================================
@@ -309,8 +320,9 @@ body {
 .testimonial-card {
     background-color: var(--light-bg);
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent-color);
 }
 
 .stars {
@@ -355,7 +367,7 @@ body {
 .service-card {
     background-color: var(--white);
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
     box-shadow: var(--shadow);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -384,7 +396,7 @@ body {
 
 .cta-section {
     padding: 60px 0;
-    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://via.placeholder.com/1920x400') center/cover;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(255, 107, 53, 0.4) 100%), url('https://source.unsplash.com/featured/1920x800/?nigeria,studio') center/cover;
     color: var(--white);
     text-align: center;
 }
@@ -404,7 +416,7 @@ body {
    ============================================ */
 
 .page-header {
-    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://via.placeholder.com/1920x400') center/cover;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(255, 107, 53, 0.3) 100%), url('https://source.unsplash.com/featured/1920x800/?nigeria,photography') center/cover;
     color: var(--white);
     padding: 100px 0;
     text-align: center;
@@ -462,7 +474,7 @@ body {
 .portfolio-item {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 12px;
     aspect-ratio: 1;
     box-shadow: var(--shadow);
 }
@@ -657,7 +669,7 @@ body {
 
 .blog-card {
     background-color: var(--white);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -860,7 +872,7 @@ body {
 
 .product-card {
     background-color: var(--white);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -946,7 +958,7 @@ body {
 }
 
 .cart-btn {
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color) 0%, #ff8c5a 100%);
     color: var(--white);
     border: none;
     width: 40px;
@@ -957,11 +969,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
 }
 
 .cart-btn:hover {
-    background-color: #c0392b;
-    transform: scale(1.1);
+    background: linear-gradient(135deg, #ff5828 0%, #ffb347 100%);
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(255, 107, 53, 0.35);
 }
 
 /* ============================================
@@ -988,7 +1002,7 @@ body {
 .contact-form {
     background-color: var(--light-bg);
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 .contact-info-items {
@@ -1032,16 +1046,18 @@ body {
     align-items: center;
     gap: 8px;
     color: var(--white);
-    background-color: var(--accent-color);
-    padding: 10px 20px;
-    border-radius: 5px;
+    background: linear-gradient(135deg, var(--accent-color) 0%, #ff8c5a 100%);
+    padding: 11px 22px;
+    border-radius: 8px;
     text-decoration: none;
     transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 .social-link:hover {
-    background-color: #ff0000;
+    background: linear-gradient(135deg, #ff5828 0%, #ffb347 100%);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
 }
 
 .faq-section {
@@ -1065,7 +1081,7 @@ body {
 .faq-item {
     background-color: var(--white);
     padding: 25px;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow);
 }
 
